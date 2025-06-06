@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DietPlan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Экран 1 -->
+    <div class="screen active" id="screen1">
+      <header>
+        <div class="header-left">
+          <img src="logo.png" class="logo" />
+          <span class="title">DietPlan</span>
+        </div>
+        <button onclick="showScreen(2)">Вход</button>
+      </header>
+      <p class="desc">Питание, созданное специально для вас!</p>
+      <p class="desc">
+        Рассчитайте свой идеальный рацион за 2 минуты и получите:<br />
+        ✅ Персональные рекомендации по калориям и БЖУ<br />
+        ✅ Меню с учетом ваших вкусов и ограничений<br />
+        ✅ Простые и вкусные рецепты на каждый день
+      </p>
+      <button onclick="showScreen(3)">Начать подбор</button>
+      <p class="desc">
+        Индивидуальный подход – учитываем ваши цели (похудение, набор массы,
+        ЗОЖ)<br />
+        Умные алгоритмы – подбираем блюда, которые вам понравятся<br />
+        Это удобно – план питания всегда под рукой в телефоне или на почте
+      </p>
+    </div>
+
+    <!-- Экран 2 -->
+    <div class="screen" id="screen2">
+      <header>
+        <img src="logo.png" class="logo" />
+        <span class="title">DietPlan</span>
+      </header>
+      <div class="form-block">
+        <label>Логин</label>
+        <input placeholder="Введите логин" />
+      </div>
+      <div class="form-block">
+        <label>Пароль</label>
+        <input type="password" placeholder="Введите пароль" />
+      </div>
+      <button onclick="showScreen(3)">Вход</button>
+    </div>
+
+    <!-- Экран 3 -->
+    <div class="screen" id="screen3">
+      <header>
+        <img src="logo.png" class="logo" />
+        <span class="title">DietPlan</span>
+      </header>
+      <div class="form-block">
+        <label>Рост</label>
+        <input placeholder="Введите рост" />
+      </div>
+      <div class="form-block">
+        <label>Вес</label>
+        <input placeholder="Введите вес" />
+      </div>
+      <div class="form-block">
+        <label>Уровень активности</label>
+        <input placeholder="Выберите уровень активности" />
+      </div>
+      <div class="form-block">
+        <label>Пол</label>
+        <select>
+          <option>М</option>
+          <option>Ж</option>
+        </select>
+      </div>
+      <button onclick="showScreen(4)">Рассчитать</button>
+    </div>
+
+    <!-- Экран 4 -->
+    <div class="screen" id="screen4">
+      <header>
+        <img src="logo.png" class="logo" />
+        <span class="title">DietPlan</span>
+      </header>
+      <div class="checkbox-container">
+        <label><input type="checkbox" /> <span>Веган</span></label>
+        <label><input type="checkbox" /> <span>Без глютена</span></label>
+        <label><input type="checkbox" /> <span>Сахарный диабет</span></label>
+        <label
+          ><input type="checkbox" /> <span>Аллергия на цитрусовые</span></label
+        >
+      </div>
+      <button onclick="showScreen(5)">
+        Подобрать персонализированный план
+      </button>
+    </div>
+
+    <!-- Экран 5 -->
+    <div class="screen" id="screen5">
+      <header>
+        <button onclick="showScreen(3)">Изменить предпочтения</button>
+
+        <div class="header-left">
+          <img src="logo.png" class="logo" />
+          <span class="title">DietPlan</span>
+        </div>
+      </header>
+      <div class="info-line">
+        <span>2000 кКал</span>
+        <span>белки 100 г</span>
+        <span>жиры 70 г</span>
+        <span>углеводы 200 г</span>
+      </div>
+
+      <table class="meal-table">
+        <thead>
+          <tr>
+            <th>Завтрак</th>
+            <th>Обед</th>
+            <th>Ужин</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td onclick="showScreen(6)">
+              <img src="omelette.png" class="meal-img" /><br />
+              Омлет по-итальянски
+            </td>
+            <td>
+              <img src="soup.png" class="meal-img" /><br />
+              Суп пюре из тыквы
+            </td>
+            <td>
+              <img src="pasta.png" class="meal-img" /><br />
+              Паста с мидиями
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Экран 6 -->
+    <div class="screen" id="screen6">
+      <header>
+        <div class="header-left">
+          <img src="logo.png" class="logo" />
+          <span class="title">DietPlan</span>
+        </div>
+      </header>
+      <div class="info-line">
+        <span>92 кКал</span>
+        <span>белки 6,51 г</span>
+        <span>жиры 5,65 г</span>
+        <span>углеводы 3,2 г</span>
+      </div>
+      <h2>Омлет по-итальянски</h2>
+      <div class="dish-detail">
+        <img src="omelette.png" class="recipe-img" />
+        <div class="dish-info">
+          <p>Будет готово через 10 минут</p>
+          <p>Время на кухне 3 минуты</p>
+          <p>Сложность: средняя</p>
+          <h3>Ингредиенты</h3>
+          <p>
+            Молоко 200 мл = 200 г<br />Яйца 2 шт. = 120 г<br />Базилик по
+            вкусу<br />Соль по вкусу
+          </p>
+        </div>
+      </div>
+      <button onclick="showScreen(5)">Назад</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
